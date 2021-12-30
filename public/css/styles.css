@@ -15,6 +15,15 @@
   color: #546e9e !important;
 }
 
+/* ENTRY
+.entry.title,
+.entry.content {
+  width: 100%;
+}
+.entry.content {
+} */
+
+/* FOOTER */
 .footer-padding {
   padding-bottom: 60px;
 }
