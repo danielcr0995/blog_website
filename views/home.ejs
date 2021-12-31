@@ -6,13 +6,17 @@
 
 <hr>
 
-<% for (let i=0; i<postsItems.length ; i++){ %> 
+<% postsItems.forEach( function (item){%> 
     <div class="postEntry">
-        <h4><%= postsItems[i].title%></h4>
-        <p><%= postsItems[i].date.toLocaleDateString('en-US')%></p>
-        <p><%= postsItems[i].body%></p>
+        <h4><%= item.title%></h4>
+        <p><%= item.date.toLocaleDateString('en-US')%></p>
+        <p><%= item.body%></p>
         <hr>
     </div>
-<%}%>
+    
+    
+    <% }) %> 
+    
+
 
 <%- include('partials/footer') %>
