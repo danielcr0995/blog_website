@@ -8,8 +8,8 @@
 
 <% postsItems.forEach( function (item){%> 
     <div class="postEntry">
-        <h4><%= item.title%></h4>
-        <p><%= item.date.toLocaleDateString('en-US')%></p>
+        <h2><%= item.title%></h2>
+        <p class="data"><%= item.date.toLocaleDateString('en-US')%></p>
         <p><%= item.body%></p>
         <hr>
     </div>

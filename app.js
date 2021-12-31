@@ -28,6 +28,7 @@ app.get('/',function (req,res){
   
 });
 
+
 app.get('/about',function (req,res){
   res.render('about', {
     pcontent:aboutContent
@@ -62,6 +63,18 @@ app.post('/compose', function(req,res){
   res.redirect('/')
 })
 
+app.get('/post/:entryTitle',function (req,res){
+  const requestedPost= req.params.entryTitle;
+  posts.forEach(function(post){
+    savedPost=post.title;
+    if (savedPost===requestedPost){
+      console.log('Matched');
+    };
+  })
+  
+  // console.log('hola');
+  
+});
 
 
 
