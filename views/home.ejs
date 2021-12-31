@@ -4,4 +4,15 @@
 
 <p> <%= pcontent %> </p>
 
+<hr>
+
+<% for (let i=0; i<postsItems.length ; i++){ %> 
+    <div class="postEntry">
+        <h4><%= postsItems[i].title%></h4>
+        <p><%= postsItems[i].date.toLocaleDateString('en-US')%></p>
+        <p><%= postsItems[i].body%></p>
+        <hr>
+    </div>
+<%}%>
+
 <%- include('partials/footer') %>

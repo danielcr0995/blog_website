@@ -21,9 +21,10 @@ let posts=[];
 
 app.get('/',function (req,res){
   res.render('home', {
-    pcontent:homeStartingContent
+    pcontent:homeStartingContent,
+    postsItems:posts
   });
-  console.log(posts);
+  // console.log(posts);
   
 });
 
