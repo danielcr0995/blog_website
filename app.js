@@ -65,10 +65,10 @@ app.post('/compose', function(req,res){
 })
 
 app.get('/post/:entryTitle',function (req,res){
-  const requestedPost= _.replace(_.toLower(req.params.entryTitle)," ","-");
+  const requestedPost= _.toLower(req.params.entryTitle);
   // console.log(requestedPost);
   posts.forEach(function(post){
-    const savedPost=_.replace(_.toLower(post.title)," ","-");
+    const savedPost=_.toLower(post.title);
     if (savedPost===requestedPost){
       // console.log('Matched');
       res.render('post',{
