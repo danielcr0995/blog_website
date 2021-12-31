@@ -10,7 +10,7 @@
     <div class="postEntry">
         <h2><%= item.title%></h2>
         <p class="data"><%= item.date.toLocaleDateString('en-US')%></p>
-        <p><%= item.body%></p>
+        <p><%= item.body.slice(0,100)+' ...';%></p>
         <hr>
     </div>
     
