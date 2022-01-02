@@ -1,1 +1,3 @@
 node_modules
+# to send to github
+# 'mongodb+srv://admin-daniel:Test123@cluster0.7kedr.mongodb.net/blogDB?retryWrites=true&w=majority'
