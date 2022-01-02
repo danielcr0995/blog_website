@@ -38,13 +38,16 @@ const entry1= new Entry({
   content: 'This is my first blog entry that is saved into a data base.'
 })
 
-entry1.save();
+// entry1.save();
 
 app.get('/',function (req,res){
-  res.render('home', {
-    pcontent:homeStartingContent,
-    postsItems:posts
-  });
+  Entry.find({}, function (error, posts) {
+    // console.log(posts);
+    res.render('home', {
+      pcontent:homeStartingContent,
+      postsItems:posts
+    });
+  });  
   // console.log(posts);
   
 });
@@ -76,7 +79,7 @@ app.post('/compose', function(req,res){
   const post={
     date:entryDate,
     title:req.body.postTitle,
-    body:req.body.postBody
+    content:req.body.postBody
   };
   // console.log(post.title, post.body);
   posts.push(post);
