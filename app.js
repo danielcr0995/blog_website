@@ -94,32 +94,20 @@ app.post('/compose', function(req,res){
 })
 
 app.get('/post/:entryTitle',function (req,res){
-  const requestedPost= _.toLower(req.params.entryTitle);
+  const requestedPost= req.params.entryTitle;
   // console.log(requestedPost);
-  posts.forEach(function(post){
-    const savedPost=_.toLower(post.title);
-    if (savedPost===requestedPost){
-      // console.log('Matched');
+
+  Entry.findOne({_id:requestedPost}, function(err, foundPost){
+    if(!err){
       res.render('post',{
-        postTitle:post.title,
-        postDate:post.date,
-        postBody:post.body
-      }
-      )
-    };
-  })
-  
-  // console.log('hola');
-  
+        postTitle:foundPost.title,
+        postDate:foundPost.date,
+        postBody:foundPost.content
+      });  
+    }  
+  });  
+  // console.log('hola');  
 });
-
-
-
-
-
-
-
-
 
 
 
