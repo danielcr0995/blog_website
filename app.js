@@ -76,13 +76,19 @@ app.get('/compose',function (req,res){
 app.post('/compose', function(req,res){
   // console.log(req.body.postTitle, req.body.postBody);
   const entryDate= new Date();
-  const post={
-    date:entryDate,
+  const post= new Entry({
     title:req.body.postTitle,
+    date:entryDate,
     content:req.body.postBody
-  };
-  // console.log(post.title, post.body);
-  posts.push(post);
+  })
+  post.save();
+  // const post={
+  //   date:entryDate,
+  //   title:req.body.postTitle,
+  //   content:req.body.postBody
+  // };
+  // // console.log(post.title, post.body);
+  // posts.push(post);
   
   res.redirect('/')
 })
